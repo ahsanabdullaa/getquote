@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect,useCallback } from "react";
 import axios from "axios";
 
 export default function Quote() {
@@ -24,7 +24,7 @@ export default function Quote() {
     "mom",
     "success",
   ];
-  const getQuote = async () => {
+   const getQuote = useCallback(async () => {
     console.log(category);
     await axios
       .get("https://api.api-ninjas.com/v1/quotes?category=" + category, {
@@ -36,7 +36,8 @@ export default function Quote() {
         setAuthor(response.data[0].author);
         setCategory(response.data[0].category);
       });
-  };
+  }, [category]); // Include 'category' in the dependency array of useCallback
+
 
   const setCat = (event) => {
     setCategory(event.target.value);
