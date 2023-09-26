@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Quote from "./components/Quote";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container bg-gradient-to-r from-slate-900 to-slate-700 min-h-screen max-w-full flex flex-col ">
+      <div className="flex-1 flex flex-col justify-center items-center">
+        <h1 className="text-slate-300 text-5xl font-serif">Quote App</h1>
+      </div>
+      <div className="text-center flex-1 self-center w-9/12">
+        <Quote />
+      </div>
     </div>
   );
 }
