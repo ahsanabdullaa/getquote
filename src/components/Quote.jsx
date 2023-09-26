@@ -44,7 +44,7 @@ export default function Quote() {
 
   useEffect(() => {
     getQuote();
-  }, []);
+  }, [quote]);
 
   return (
     <div>
